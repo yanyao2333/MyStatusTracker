@@ -1,0 +1,17 @@
+[Unit]
+Description=My Status Client
+After=network-online.target
+
+[Service]
+Type=simple
+Environment="DISPLAY=:1"
+ExecStart=/path/to/your/client/binary
+Restart=always
+User=your-user-name
+Group=your-user-group
+RestartSec=10
+WorkingDirectory=/home/roitium/Applications/my-status
+Environment="XAUTHORITY=/home/your-user-name/.Xauthority"
+
+[Install]
+WantedBy=multi-user.target
